@@ -4,7 +4,6 @@ node {
     }
     
     stage('Ansible') {
-       sh 'su - jenkins -s /bin/bash'
       sh 'ansible-playbook -u root -i hosts.yml playbook.yml'
     }
 }
