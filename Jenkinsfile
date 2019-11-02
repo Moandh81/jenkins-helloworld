@@ -1,10 +1,9 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'nginx -v'
-            }
-        }
+node {
+    stage('Clone') {
+     git 'https://github.com/Moandh81/ansible-jenkins'   
+    }
+    
+    stage('Ansible') {
+      sh ' ansible-playbook -i hosts.yml playbook.yml'   
     }
 }
