@@ -4,6 +4,6 @@ node {
     }
     
     stage('Ansible') {
-      sh 'whoami'
+      sh 'ansible-playbook -u root -i hosts.yml playbook.yml'
     }
 }
