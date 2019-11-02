@@ -7,8 +7,8 @@ node {
       ansiblePlaybook(
         colorized:true,
           become:true,
+          inventory: 'hosts.yml',
           playbook: 'playook.yml',
-          inventory: 'hosts.yml'
       )
     }
 }
