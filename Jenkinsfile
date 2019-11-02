@@ -4,11 +4,6 @@ node {
     }
     
     stage('Ansible') {
-      ansiblePlaybook (
-      colorized: true, 
-      become: true,
-      playbook: 'ansible-jenkins/playbook.yml',
-      hosts:: 'ansible-jenkins/hosts.yml'
-   )
+      sh 'ansible-playbook -i hosts.yml playbook.yml'
     }
 }
