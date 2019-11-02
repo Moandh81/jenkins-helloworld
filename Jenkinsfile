@@ -17,5 +17,12 @@ pipeline {
                 sh "cd jenkins-helloworld/ && java Main"
             }
         }
+        
+        stage('test') {
+            steps {
+              sh " echo hello world   "   
+            }
+            
+        }
     }
 }
